@@ -5,13 +5,13 @@ var yosay = require('yosay');
 
 module.exports = yeoman.Base.extend({
 
-  welcome: function () {
+  welcome: function() {
     this.log(yosay(
       'Welcome to the HotTowel AngularJS generator!'
     ));
   },
 
-  prompting: function () {
+  prompting: function() {
     var done = this.async();
 
     // Have Yeoman greet the user.
@@ -34,8 +34,8 @@ module.exports = yeoman.Base.extend({
       default: this.appname
     }];
 
-    // this.prompt(prompts, function (props) {
-    this.prompt(prompts, function (answers) {
+    // this.prompt(prompts, function(props) {
+    this.prompt(prompts, function(answers) {
       // this.props = props;
       this.props = answers;
       this.log(answers.name);
@@ -45,7 +45,7 @@ module.exports = yeoman.Base.extend({
     }.bind(this));
   },
 
-  writing: function () {
+  writing: function() {
     this.fs.copyTpl(
       this.templatePath('_package.json'),
       this.destinationPath('package.json'), {
@@ -66,7 +66,7 @@ module.exports = yeoman.Base.extend({
     );
   },
 
-  install: function () {
+  install: function() {
     this.installDependencies();
   }
 });

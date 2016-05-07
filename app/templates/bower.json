@@ -1,0 +1,20 @@
+{
+  "name": "templates",
+  "homepage": "https://github.com/andreasonny83/generator-mdl",
+  "authors": [
+    "Andrea Sonny <andreasonny83@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "material-design-lite": "^1.1.3"
+  }
+}
