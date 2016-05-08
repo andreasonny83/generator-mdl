@@ -27,7 +27,7 @@ yo mdl
 ```
 
 Run
-* `gulp` for testing
+* `gulp test` for testing
 * `gulp build` for building
 * `gulp serve` for preview
 * `grunt serve:dist` for a preview of the built app.
@@ -38,7 +38,6 @@ Run
  * Yeoman is a person with feelings and opinions, but is very easy to work with.
  * Yeoman can be too opinionated at times but is easily convinced not to be.
  * Feel free to [learn more about Yeoman](http://yeoman.io/).
-
 
 
 ## Contributing

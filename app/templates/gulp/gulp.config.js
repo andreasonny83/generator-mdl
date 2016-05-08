@@ -1,7 +1,8 @@
 import path from 'path';
 
-const src = path.join(__dirname, '../src');
+const src = path.join(__dirname, '../app');
 const dist = path.join(__dirname, '../dist');
+const temp = path.join(__dirname, '../.tmp');
 
 const AUTOPREFIXER = [
   'last 2 versions',
@@ -15,7 +16,25 @@ const AUTOPREFIXER = [
 const config = {
   src: src,
   dist: dist,
+  temp: {
+    base: temp,
+    libs: path.join(temp, 'libs'),
+    sass: path.join(temp, 'styles'),
+    js: path.join(temp, 'scripts'),
+    styles: [
+      path.join(temp, 'libs', '*.css'),
+      path.join(temp, 'styles', '*.css')
+    ],
+    scripts: [
+      path.join(temp, 'libs', '*.js'),
+      path.join(temp, 'scripts', '*.js')
+    ]
+  },
+  bowers: path.join(src, 'bower_components'),
   autoprefixer: AUTOPREFIXER,
+  files: [
+    path.join(src, '*.html')
+  ],
   styles: {
     src: path.join(src, 'sass/**/*.scss'),
     dest: path.join(dist, 'styles')

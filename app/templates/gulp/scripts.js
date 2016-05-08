@@ -2,12 +2,22 @@ import gulp from 'gulp';
 import {config, env} from './gulp.config';
 import webpackStream from 'webpack-stream';
 import webpack from 'webpack';
+import sourcemaps from 'gulp-sourcemaps';
+import concat from 'gulp-concat';
 
 /**
  * @todo: file version, js linting before running webpack
  */
 
-const scripts = () => {
+const _concat = () => {
+  return gulp.src(config.temp.scripts)
+    .pipe(sourcemaps.init())
+    .pipe(concat('main.min.js'))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(config.scripts.dest));
+};
+
+const _webpack = () => {
   return gulp.src(config.scripts.src)
     .pipe(webpackStream({
       output: {
@@ -26,7 +36,9 @@ const scripts = () => {
         ]
       }
     }))
-    .pipe(gulp.dest(config.scripts.dest));
+    .pipe(gulp.dest(config.temp.js));
 };
+
+const scripts = gulp.series(_webpack, _concat);
 
 module.exports = scripts;

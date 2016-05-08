@@ -42,7 +42,7 @@ Please ensure any pull requests follow this closely. If you notice existing code
 * Please check to make sure that there aren't existing pull requests attempting to address the issue mentioned. We also recommend checking for issues related to the issue on the tracker, as a team member may be working on the issue in a branch or fork.
 * Non-trivial changes should be discussed in an issue first
 * Develop in a topic branch, not master
-* Lint the code by running `grunt`
+* Lint the code by running `gulp`
 * Add relevant tests to cover the change
 * Make sure test-suite passes: `npm test`
 * Squash your commits

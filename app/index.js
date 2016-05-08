@@ -5,12 +5,6 @@ var yosay = require('yosay');
 
 module.exports = yeoman.Base.extend({
 
-  welcome: function() {
-    this.log(yosay(
-      'Welcome to the HotTowel AngularJS generator!'
-    ));
-  },
-
   prompting: function() {
     var done = this.async();
 
@@ -19,28 +13,16 @@ module.exports = yeoman.Base.extend({
       'Welcome to the brilliant ' + chalk.red('generator-mdl') + ' generator!'
     ));
 
-    // var prompts = [{
-    //   type: 'confirm',
-    //   name: 'someAnswer',
-    //   message: 'Would you like to enable this option?',
-    //   default: true
-    // }];
-
     var prompts = [{
       type: 'input',
-      name: 'name',
-      message: 'Your project name',
-      // Defaults to the project's folder name if the input is skipped
+      name: 'appname',
+      message: 'What would you like to name the app?',
       default: this.appname
     }];
 
-    // this.prompt(prompts, function(props) {
     this.prompt(prompts, function(answers) {
-      // this.props = props;
       this.props = answers;
-      this.log(answers.name);
-      // To access props later use this.props.someAnswer;
-
+      console.log(this.props);
       done();
     }.bind(this));
   },
@@ -49,21 +31,66 @@ module.exports = yeoman.Base.extend({
     this.fs.copyTpl(
       this.templatePath('_package.json'),
       this.destinationPath('package.json'), {
-        name: this.props.name
+        name: this.props.appname
       }
     );
 
     this.fs.copyTpl(
       this.templatePath('_bower.json'),
       this.destinationPath('bower.json'), {
-        name: this.props.name
+        name: this.props.appname
       }
     );
 
     this.fs.copy(
-      this.templatePath('bowerrc'),
+      this.templatePath('_babelrc'),
+      this.destinationPath('.babelrc')
+    );
+
+    this.fs.copy(
+      this.templatePath('_bowerrc'),
       this.destinationPath('.bowerrc')
     );
+
+    this.fs.copy(
+      this.templatePath('_editorconfig'),
+      this.destinationPath('.editorconfig')
+    );
+
+    this.fs.copy(
+      this.templatePath('_eslintrc.js'),
+      this.destinationPath('.eslintrc.js')
+    );
+
+    this.fs.copy(
+      this.templatePath('_gitattributes'),
+      this.destinationPath('.gitattributes')
+    );
+
+    this.fs.copy(
+      this.templatePath('_gitignore'),
+      this.destinationPath('.gitignore')
+    );
+
+    this.fs.copy(
+      this.templatePath('_travis.yml'),
+      this.destinationPath('.travis.yml')
+    );
+
+    this.fs.copy(
+      this.templatePath('_gulpfile.babel.js'),
+      this.destinationPath('gulpfile.babel.js')
+    );
+
+    this.fs.copy(
+      this.templatePath('_LICENSE-3RD-PARTY.md'),
+      this.destinationPath('LICENSE-3RD-PARTY.md')
+    );
+  },
+
+  appFiles: function() {
+    this.directory('app');
+    this.directory('gulp');
   },
 
   install: function() {
