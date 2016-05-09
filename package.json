@@ -1,6 +1,6 @@
 {
   "name": "generator-mdl",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Yeoman Generator for Goolgle MaterialDesignLite",
   "homepage": "https://github.com/andreasonny83/generator-mdl",
   "author": {
@@ -16,9 +16,9 @@
   ],
   "main": "appp/index.js",
   "keywords": [
+    "yeoman-generator",
     "material",
-    "mdl",
-    "yeoman-generator"
+    "mdl"
   ],
   "dependencies": {
     "chalk": "^1.0.0",
@@ -42,7 +42,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "andreasonny83/generator-mdl"
+    "url": "git://github.com/andreasonny83/generator-mdl.git"
   },
   "scripts": {
     "prepublish": "gulp prepublish",
