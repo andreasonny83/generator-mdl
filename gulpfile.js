@@ -1,4 +1,5 @@
 'use strict';
+
 var path = require('path');
 var gulp = require('gulp');
 var eslint = require('gulp-eslint');
@@ -22,11 +23,11 @@ gulp.task('nsp', function(cb) {
 });
 
 gulp.task('pre-test', function() {
-  return gulp.src('generators/**/*.js')
+  return gulp.src('app/**/*.js')
     .pipe(excludeGitignore())
-    .pipe(istanbul({
-      includeUntested: true
-    }))
+    // .pipe(istanbul({
+    //   includeUntested: true
+    // }))
     .pipe(istanbul.hookRequire());
 });
 
@@ -35,7 +36,9 @@ gulp.task('test', ['pre-test'], function(cb) {
 
   gulp.src('test/**/*.js')
     .pipe(plumber())
-    .pipe(mocha({reporter: 'spec'}))
+    .pipe(mocha({
+      reporter: 'spec'
+    }))
     .on('error', function(err) {
       mochaErr = err;
     })
@@ -46,7 +49,7 @@ gulp.task('test', ['pre-test'], function(cb) {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(['generators/**/*.js', 'test/**'], ['test']);
+  gulp.watch(['app/**/*.js', 'test/**'], ['test']);
 });
 
 gulp.task('coveralls', ['test'], function() {

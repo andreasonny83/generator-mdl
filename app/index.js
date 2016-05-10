@@ -20,8 +20,8 @@ module.exports = yeoman.Base.extend({
       default: this.appname
     }];
 
-    this.prompt(prompts, function(answers) {
-      this.props = answers;
+    return this.prompt(prompts).then(function(props) {
+      this.props = props;
       done();
     }.bind(this));
   },
