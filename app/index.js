@@ -42,48 +42,48 @@ module.exports = yeoman.Base.extend({
     );
 
     this.fs.copy(
-      this.templatePath('_babelrc'),
+      this.templatePath('.babelrc'),
       this.destinationPath('.babelrc')
     );
 
     this.fs.copy(
-      this.templatePath('_bowerrc'),
+      this.templatePath('.bowerrc'),
       this.destinationPath('.bowerrc')
     );
 
     this.fs.copy(
-      this.templatePath('_editorconfig'),
+      this.templatePath('.editorconfig'),
       this.destinationPath('.editorconfig')
     );
 
     this.fs.copy(
-      this.templatePath('_eslintrc.js'),
-      this.destinationPath('.eslintrc.js')
-    );
-
-    this.fs.copy(
-      this.templatePath('_gitattributes'),
+      this.templatePath('.gitattributes'),
       this.destinationPath('.gitattributes')
     );
 
     this.fs.copy(
-      this.templatePath('_gitignore'),
+      this.templatePath('.gitignore'),
       this.destinationPath('.gitignore')
     );
 
     this.fs.copy(
-      this.templatePath('_travis.yml'),
+      this.templatePath('.stylelintrc'),
+      this.destinationPath('.stylelintrc')
+    );
+
+    this.fs.copy(
+      this.templatePath('.travis.yml'),
       this.destinationPath('.travis.yml')
     );
 
     this.fs.copy(
-      this.templatePath('_gulpfile.babel.js'),
+      this.templatePath('gulpfile.babel.js'),
       this.destinationPath('gulpfile.babel.js')
     );
 
     this.fs.copy(
-      this.templatePath('_LICENSE-3RD-PARTY.md'),
-      this.destinationPath('LICENSE-3RD-PARTY.md')
+      this.templatePath('README.md'),
+      this.destinationPath('README.md')
     );
   },
 

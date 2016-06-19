@@ -1,0 +1,8 @@
+{
+	"rules": {
+		"color-hex-length": "short",
+		"comment-empty-line-before": "always",
+		"string-quotes": "single",
+		"selector-no-vendor-prefix": true
+	}
+}

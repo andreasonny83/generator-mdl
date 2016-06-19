@@ -15,35 +15,39 @@ const AUTOPREFIXER = [
 
 const config = {
   src: src,
+  temp: temp,
   dist: dist,
-  temp: {
-    base: temp,
-    libs: path.join(temp, 'libs'),
-    sass: path.join(temp, 'styles'),
-    js: path.join(temp, 'scripts'),
-    styles: [
-      path.join(temp, 'libs', '*.css'),
-      path.join(temp, 'styles', '*.css')
-    ],
-    scripts: [
-      path.join(temp, 'libs', '*.js'),
-      path.join(temp, 'scripts', '*.js')
-    ]
-  },
-  bowers: path.join(src, 'bower_components'),
-  autoprefixer: AUTOPREFIXER,
-  files: [
-    path.join(src, '*.html')
-  ],
-  styles: {
-    src: path.join(src, 'sass/**/*.scss'),
-    dest: path.join(dist, 'styles')
-  },
-  scripts: {
-    src: path.join(src, 'scripts/entry.js'),
-    webpack: path.join(__dirname, '../webpack.config.js'),
-    dest: path.join(dist, 'scripts')
-  }
+  images: 'images',
+  scripts: 'scripts',
+  styles: 'styles',
+  autoprefixer: AUTOPREFIXER
+  // temp: {
+  //   base: temp,
+  //   libs: path.join(temp, 'libs'),
+  //   sass: path.join(temp, 'styles'),
+  //   js: path.join(temp, 'scripts'),
+  //   styles: [
+  //     path.join(temp, 'libs', '*.css'),
+  //     path.join(temp, 'styles', '*.css')
+  //   ],
+  //   scripts: [
+  //     path.join(temp, 'libs', '*.js'),
+  //     path.join(temp, 'scripts', '*.js')
+  //   ]
+  // },
+  // bowers: path.join(src, 'bower_components'),
+  // files: [
+  //   path.join(src, '*.html')
+  // ]
+  // styles: {
+  //   src: path.join(src, 'sass/**/*.scss'),
+  //   dist: path.join(dist, 'styles')
+  // }
+  // scripts: {
+  //   src: path.join(src, 'scripts/entry.js'),
+  //   webpack: path.join(__dirname, '../webpack.config.js'),
+  //   dist: path.join(dist, 'scripts')
+  // },
 };
 
 var env = {

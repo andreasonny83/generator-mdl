@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "name": "MDL Starter Kit",
+  "launch_path": "/index.html",
+  "description": "A starting point for building web applications with Material Design Lite.",
+  "icons": {
+    "128": "/images/icons/icon-128x128.png"
+  },
+  "developer": {
+    "name": "",
+    "url": ""
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "en",
+  "permissions": {
+  },
+  "locales": {
+    "en": {
+      "name": "MDL Starter Kit",
+      "description": "A starting point for building web applications with Material Design Lite."
+    }
+  }
+}
