@@ -42,47 +42,47 @@ module.exports = yeoman.Base.extend({
     );
 
     this.fs.copy(
-      this.templatePath('.babelrc'),
+      this.templatePath('_babelrc'),
       this.destinationPath('.babelrc')
     );
 
     this.fs.copy(
-      this.templatePath('.bowerrc'),
+      this.templatePath('_bowerrc'),
       this.destinationPath('.bowerrc')
     );
 
     this.fs.copy(
-      this.templatePath('.editorconfig'),
+      this.templatePath('_editorconfig'),
       this.destinationPath('.editorconfig')
     );
 
     this.fs.copy(
-      this.templatePath('.gitattributes'),
+      this.templatePath('_gitattributes'),
       this.destinationPath('.gitattributes')
     );
 
     this.fs.copy(
-      this.templatePath('.gitignore'),
+      this.templatePath('_gitignore'),
       this.destinationPath('.gitignore')
     );
 
     this.fs.copy(
-      this.templatePath('.stylelintrc'),
+      this.templatePath('_stylelintrc'),
       this.destinationPath('.stylelintrc')
     );
 
     this.fs.copy(
-      this.templatePath('.travis.yml'),
+      this.templatePath('_travis.yml'),
       this.destinationPath('.travis.yml')
     );
 
     this.fs.copy(
-      this.templatePath('gulpfile.babel.js'),
+      this.templatePath('_gulpfile.babel.js'),
       this.destinationPath('gulpfile.babel.js')
     );
 
     this.fs.copy(
-      this.templatePath('README.md'),
+      this.templatePath('_README.md'),
       this.destinationPath('README.md')
     );
   },
